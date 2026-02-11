@@ -9,6 +9,7 @@ Notebook Mejorado: [Algoritmos_AG1-Alberto_Paparelli.ipynb](AG1-Actividad-Guiada
 
 ## Mejoras
 
+### Torres de Hanoi con Divide y vencerás
 Se agrego una representacion visual del estado de las torres despues de cada movimiento.
 La funcion principal Torres_Hanoi(N, desde, hasta) mantiene la misma estructura recursiva original,
 reemplazando unicamente el print por una llamada a mover_y_dibujar, que realiza:
