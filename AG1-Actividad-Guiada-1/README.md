@@ -21,7 +21,7 @@ lo que facilita la comprension paso a paso del algoritmo.
 La complejidad algoritmica no cambia, ya que la mejora es puramente de visualizacion.
 
 
-### Cálculo del termino n-simo de la suscesión de Fibonacci
+### Sucesión de Fibonacci
 
 - Se agregó una versión iterativa Fibonacci_PD() que utiliza una tabla para almacenar sub-problemas ya resueltos,
 evitando los recálculos redundantes de la versión recursiva.
