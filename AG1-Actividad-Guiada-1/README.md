@@ -26,3 +26,39 @@ La complejidad algoritmica no cambia, ya que la mejora es puramente de visualiza
 - Se agregó una versión iterativa Fibonacci_PD() que utiliza una tabla para almacenar sub-problemas ya resueltos,
 evitando los recálculos redundantes de la versión recursiva.
 - Se incluye una comparación de tiempos de ejecución con time para evidenciar la diferencia entre O(2^N) (recursiva) y O(N) (programación dinámica).
+
+
+
+### N-Reinas por técnica de vueta atrás
+
+- Poda temprana: es_prometedora ahora solo compara la reina nueva (en etapa) contra las anteriores con range(etapa),
+en vez de recorrer toda la solución.
+- Se elimina count(): Se reemplazó SOLUCION.count() > 1 por una comparación directa SOLUCION[i] == SOLUCION[etapa],
+pasando de O(N) a O(1) por verificación
+- BUG: Fix mutable default: solucion=[] cambiado a solucion=None con if solucion is None.
+En Python, los argumentos por defecto se evalúan una sola vez cuando se define la función,
+no cada vez que se llama. Eso significa que todas las llamadas comparten la misma lista.
+
+Ejemplo del bug:
+```
+def agregar(valor, lista=[]):
+    lista.append(valor)
+    return lista
+
+print(agregar(1))  # [1]       - ok
+print(agregar(2))  # [1, 2]    - debería ser [2]
+print(agregar(3))  # [1, 2, 3] - debería ser [3]
+La lista [] se crea una sola vez en memoria. Cada llamada a agregar() modifica la misma lista.
+```
+
+
+### Viaje por el rio. Programación dinámica
+
+- Reemplazo de magic numbers: Se reemplazaron los valores arbitrarios 999 y 9999 por float('inf') (infinito de Python).
+- Inicializacion clara: Se cambio `[9999]*N for i in [9999]*N` por `[float('inf')]*N for _ in range(N)`.
+El codigo original usaba una lista `[9999]*N` como iterador del list comprehension, lo cual funcionaba
+(iteraba N veces porque la lista tenia N elementos) pero `range(N)` expresa mejor que se quieren N filas.
+- Fix de calcular_ruta: La funcion original mezclaba print() con return de strings,
+produciendo una salida incorrecta: imprimia "Ir a :0" y retornaba ',0,2,5'.
+Lo cambié para que retorne una lista de paradas [0, 2, 5, 6] usando recursion,
+y luego se imprime con " -> ".join() para mostrar la ruta completa: 0 -> 2 -> 5 -> 6.
