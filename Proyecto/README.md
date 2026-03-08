@@ -53,3 +53,10 @@ Fecha limite de entrega 1ª convocatoria: 06/03/2025 a las 23:59 horas.
             * Código comentado.
             * Acompaña ilustraciones(imágenes) si es necesario.
     * En caso de no llegar al punto optimo, es valorado hacer algún analisis, estudios de valores de entrada que puede hacer que el algoritmo se comporte mejor o peor, si es una euristíca analizar como de lejos esta de la solución óptima, etc.
+
+
+
+---
+Esto dijo expresamente que intentáramos evitarlo
+Que había que "demostrar más conocimientos de la materia"
+Dijo eso, búsquedas local sola, y soluciones aleatorias solas, sin combinar otras tecnicas
